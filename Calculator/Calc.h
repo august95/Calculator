@@ -1,15 +1,15 @@
 #pragma once
-#include "Node.h"
 #include "Parser.h"
 
 class Calc
 {
 private:
-	Node* root;
+	Component* root;
 	Parser* parser;
-	Node* Expression();
-	Node* Term();
-	Node* Primary();
+	Component* Expression();
+	Component* Term();
+	Component* Primary();
+	
 
 public:
 	Calc();

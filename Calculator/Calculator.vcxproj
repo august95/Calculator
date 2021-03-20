@@ -142,20 +142,22 @@
     <ClCompile Include="Addition.cpp" />
     <ClCompile Include="Calc.cpp" />
     <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="Leaf.cpp" />
     <ClCompile Include="Multiplication.cpp" />
-    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Subtraction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Addition.h" />
     <ClInclude Include="Calc.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Composite.h" />
     <ClInclude Include="Leaf.h" />
     <ClInclude Include="Multiplication.h" />
-    <ClInclude Include="Node.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="Subtraction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,15 @@
 #include "Multiplication.h"
 #include <iostream>
+/*
+Multiplication::Multiplication()
+{
+    ident = Multiply;
+}
+
+Ident Multiplication::Identify()
+{
+    return ident;
+}
 
 float Multiplication::Excecute()
 {
@@ -7,24 +17,25 @@ float Multiplication::Excecute()
     return 0.0f;
 }
 
-void Multiplication::SetLeftChild(Node* value)
+void Multiplication::SetLeftChild(Composite* value)
 {
     left = value;
 }
 
-Node* Multiplication::GetLeftChild()
+Composite* Multiplication::GetLeftChild()
 {
     return left;
 }
 
-void Multiplication::SetRightChild(Node* value)
+void Multiplication::SetRightChild(Composite* value)
 {
     right = value;
 }
 
-Node* Multiplication::GetRightChild()
+Composite* Multiplication::GetRightChild()
 {
     return right;
 }
 
 
+*/

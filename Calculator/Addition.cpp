@@ -1,28 +1,34 @@
 #include "Addition.h"
 
+Addition::Addition()
+{
+	ident = Add;
+}
+
+Ident Addition::Identify()
+{
+	return ident;
+}
+
 float Addition::Excecute()
 {
 	return 0.0f;
 }
 
-void Addition::SetLeftChild(Node* value)
+void Addition::SetChild(Component* value)
 {
-	left = value;
+	children.push_back(value);
 }
 
-Node* Addition::GetLeftChild()
+Component* Addition::GetChild(unsigned int number)
 {
-	return left;
+	if (children.size() < number) return nullptr;
+	return children[number];
 }
 
-void Addition::SetRightChild(Node* value)
+int Addition::NumberOfChildren()
 {
-	right = value;
-}
-
-Node* Addition::GetRightChild()
-{
-	return right;
+	return children.size();
 }
 
 

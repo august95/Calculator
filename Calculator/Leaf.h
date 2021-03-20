@@ -1,11 +1,15 @@
 #pragma once
-#include "Node.h"
+#include "Composite.h"
 
-class Leaf : public Node
+class Leaf : public Component
 {
 public:
+	Ident ident;
+	Ident Identify();
 	Leaf(float _value);
-	float Excecute(); 
+	virtual float Excecute();
+	virtual void SetChild(Component* value);
+	virtual Component* GetChild();
 
 private:
 	float value;

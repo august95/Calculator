@@ -12,7 +12,7 @@ int main()
 {
     
     Calc* calc = new Calc;
-    calc->Init();
+    calc->Begin();
     
     std::cout << "This is never going to be printed! \n";
 
