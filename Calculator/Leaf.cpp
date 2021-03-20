@@ -1,6 +1,13 @@
 #include "Leaf.h"
+#include <iostream>
+
+Leaf::Leaf(float _value)
+{
+	value = _value;
+}
 
 float Leaf::Excecute()
 {
-	return 0.0;
+	std::cout << value <<"  leaf excecuted() \n";
+	return value;
 }

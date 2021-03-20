@@ -1,9 +1,18 @@
 #pragma once
 #include "Composite.h"
-class Multiplication : Composite
+#include "Node.h"
+
+class Multiplication : public Composite
 {
+private:
+	Node* left;
+	Node* right;
+
+public:
 	float Excecute();
-	void SetChild();
-	void GetChild();
+	void SetLeftChild(Node* value);
+	Node* GetLeftChild();
+	void SetRightChild(Node* value);
+	Node* GetRightChild();
 };
 

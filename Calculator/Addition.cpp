@@ -5,10 +5,25 @@ float Addition::Excecute()
 	return 0.0f;
 }
 
-void Addition::SetChild()
+void Addition::SetLeftChild(Node* value)
 {
+	left = value;
 }
 
-void Addition::GetChild()
+Node* Addition::GetLeftChild()
 {
+	return left;
 }
+
+void Addition::SetRightChild(Node* value)
+{
+	right = value;
+}
+
+Node* Addition::GetRightChild()
+{
+	return right;
+}
+
+
+

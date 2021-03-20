@@ -7,14 +7,13 @@
 #include "Leaf.h"
 
 
+
 int main()
 {
     
-    Calc* _Calc = new Calc;
-    Addition* Comp = new Addition;
-    Multiplication* Mult = new Multiplication;
-    Leaf* leaf = new Leaf;
-    _Calc->Excecute();
+    Calc* calc = new Calc;
+    calc->Init();
+    
     std::cout << "This is never going to be printed! \n";
 
 }

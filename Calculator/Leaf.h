@@ -1,8 +1,13 @@
 #pragma once
 #include "Node.h"
-class Leaf : Node
+
+class Leaf : public Node
 {
 public:
-	float Excecute();
+	Leaf(float _value);
+	float Excecute(); 
+
+private:
+	float value;
 };
 

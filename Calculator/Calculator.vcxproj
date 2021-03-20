@@ -146,6 +146,7 @@
     <ClCompile Include="Leaf.cpp" />
     <ClCompile Include="Multiplication.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Addition.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Leaf.h" />
     <ClInclude Include="Multiplication.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
