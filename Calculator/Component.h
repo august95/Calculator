@@ -8,6 +8,7 @@ class Component
 {
 public:
 	Ident ident;
+	~Component();
 	std::vector<Component*> children;
 	virtual Ident Identify();
 	virtual float Excecute();

@@ -5,8 +5,9 @@ class Leaf : public Component
 {
 public:
 	Ident ident;
-	Ident Identify();
 	Leaf(float _value);
+	~Leaf();
+	Ident Identify();
 	virtual float Excecute();
 	virtual void SetChild(Component* value);
 	virtual Component* GetChild();

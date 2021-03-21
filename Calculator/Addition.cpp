@@ -5,6 +5,12 @@ Addition::Addition()
 	ident = Add;
 }
 
+Addition::~Addition()
+{
+	for (int i = 0; i < children.size(); i++)
+		children[i]->~Component();
+}
+
 Ident Addition::Identify()
 {
 	return ident;

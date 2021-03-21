@@ -1,5 +1,10 @@
 #include "Component.h"
 
+
+Component::~Component()
+{
+}
+
 Ident Component::Identify()
 {
     return Uninitialized;

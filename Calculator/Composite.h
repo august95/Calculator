@@ -6,6 +6,7 @@ class Composite : public Component
 {
 public:
 	Ident ident;
+	~Composite();
 	std::vector<Component*> children;
 	virtual Ident Identify();
 	virtual float Excecute();

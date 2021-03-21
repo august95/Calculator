@@ -1,5 +1,9 @@
 #include "Composite.h"
 
+Composite::~Composite()
+{
+}
+
 Ident Composite::Identify()
 {
 	return Component::Identify();

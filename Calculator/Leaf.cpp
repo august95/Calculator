@@ -12,6 +12,10 @@ Leaf::Leaf(float _value)
 	value = _value;
 }
 
+Leaf::~Leaf()
+{
+}
+
 float Leaf::Excecute()
 {
 	std::cout << value <<"  leaf excecuted() \n";

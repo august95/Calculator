@@ -13,6 +13,7 @@ private:
 
 public:
 	Calc();
+	~Calc();
 	void Excecute();
 	void Begin();
 };

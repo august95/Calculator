@@ -7,6 +7,7 @@ class Addition : public Composite
 
 public:
 	Addition();
+	~Addition();
 	Ident ident;
 	std::vector<Component*> children;
 	virtual Ident Identify();

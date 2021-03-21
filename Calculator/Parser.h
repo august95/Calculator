@@ -10,6 +10,7 @@ class Parser
 public:
 	Component* Get();
 	Parser();
+	~Parser();
 	//static Parser* GetParser();
 	void putback(Component* n);
 private:

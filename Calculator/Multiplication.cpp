@@ -1,9 +1,15 @@
 #include "Multiplication.h"
 #include <iostream>
-/*
+
 Multiplication::Multiplication()
 {
     ident = Multiply;
+}
+
+Multiplication::~Multiplication()
+{
+	for (int i = 0; i < children.size(); i++)
+		children[i]->~Component();
 }
 
 Ident Multiplication::Identify()
@@ -13,29 +19,25 @@ Ident Multiplication::Identify()
 
 float Multiplication::Excecute()
 {
-    std::cout << "Multiplication Executed \n";
-    return 0.0f;
+    float val = 1;
+    for (int i = 0; i < children.size(); i++) {
+        val = val * children[i]->Excecute();
+    }
+    return val;
 }
 
-void Multiplication::SetLeftChild(Composite* value)
+void Multiplication::SetChild(Component* value)
 {
-    left = value;
+    children.push_back(value);
 }
 
-Composite* Multiplication::GetLeftChild()
+Component* Multiplication::GetChild(unsigned int number)
 {
-    return left;
+	if (children.size() < number) return nullptr;
+	return children[number];
 }
 
-void Multiplication::SetRightChild(Composite* value)
+int Multiplication::NumberOfChildren()
 {
-    right = value;
+    return children.size();
 }
-
-Composite* Multiplication::GetRightChild()
-{
-    return right;
-}
-
-
-*/
