@@ -28,3 +28,8 @@ int Composite::NumberOfChildren()
 {
 	return Component::NumberOfChildren();
 }
+
+void Composite::PrintCompositeStructure()
+{
+	Component::PrintCompositeStructure();
+}

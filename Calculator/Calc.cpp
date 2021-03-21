@@ -6,9 +6,11 @@
 
 void Calc::Begin()
 {
-	std::cout << "while(std::cin) \n";
-	root = Expression();
-	std::cout << root->Excecute() << "finished excecuting \n";
+	while (std::cin) {
+		root = Expression();
+		std::cout << "answer: " << root->Excecute() << std::endl;
+		root->~Component();
+	}
 }
 
 Calc::Calc()
@@ -21,7 +23,6 @@ Calc::~Calc()
 {
 	parser->~Parser();
 	root->~Component();
-	
 }
 
 void Calc::Excecute()
@@ -29,73 +30,56 @@ void Calc::Excecute()
 	root->Excecute();
 }
 
-
-
-Component* Calc::Expression()		// Addition and subtraction
+Component* Calc::Expression()					// Addition and subtraction
 {
-	/*
-	Component* left = parser->Get(); // first leaf or addition with leafs
-	Component* c = parser->Get();
-	c->SetChild(left);
-	//Leaf* left = Term(); // is always a leaf
-	while (true)
+	Component* leaf = Term();					
+	Component* toReturn = leaf;
+	Component* composite = parser->Get();
+
+	while (composite->Identify() == Subtract || composite->Identify() == Add ||
+		   composite->Identify() == Multiply)
 	{
-		if (c->Identify() == Add) {
-
-		}
-
-	}
-	return nullptr;
-	*/
-
-	return Term();
-}
-
-Component* Calc::Term()				// Returns a Multiplication filled 
-{									//with leafs or just a single leaf{
-	Component* toReturn = Primary();//Always leaf
-	Component* c = parser->Get();	//Composite
-
-	while(c->Identify() == Multiply)
-	{
-		c->SetChild(toReturn);
-		toReturn = parser->Get();
-		if (toReturn->Identify() == LeafNode) 
+		composite->SetChild(leaf);
+		leaf = Term();							// leaf or addition with leafs
+		if (leaf->Identify() == LeafNode || leaf->Identify() == Multiply || 
+			leaf->Identify() == Subtract || leaf->Identify() == Add)
 		{
-			c->SetChild(toReturn);
-			toReturn = c;
-			c = parser->Get();		// will return Composite
+			composite->SetChild(leaf);
+			leaf = composite;
+			if(leaf)
+				toReturn = leaf;
+			composite = parser->Get();
 		}
 	}
-	std::cout << "End of Term() \n";
-	parser->putback(c);
 	return toReturn;
 }
 
-Component* Calc::Primary()			// can only return Leafs
+Component* Calc::Term()							//Returns a Multiplication filled 
+{												//with leafs or just a single leaf
+	Component* leaf = Primary();
+	Component* toReturn;			
+	toReturn = leaf;
+	Component* composite = parser->Get();		//Composite
+
+	while(composite->Identify() == Multiply)
+	{
+		composite->SetChild(leaf);
+		leaf = Primary();						// return leaf of Composite with leafs
+		if (leaf->Identify() == LeafNode || leaf->Identify() == Multiply) 
+		{
+			composite->SetChild(leaf);
+			leaf = composite;
+			if (leaf)
+				toReturn = leaf;
+			composite = parser->Get();			// will return Composite
+		}
+	}
+	parser->putback(composite);
+	return toReturn;
+}
+
+Component* Calc::Primary()						// can only return Leafs;
 {  
-	std::cout << "Primary() \n";
 	return parser->Get();
 }
 
-
-
-
-
-/*
-void Calc::Begin()
-{
-
-	bool performed = false;
-	while (std::cin)
-	{
-		if (!performed)
-		{
-			std::cout << "while(std::cin) \n";
-			root = Expression();
-			std::cout << root->Excecute() << "finished excecuting \n";
-			performed = true;
-		}
-	}
-}
-*/

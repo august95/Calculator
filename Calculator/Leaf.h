@@ -11,6 +11,7 @@ public:
 	virtual float Excecute();
 	virtual void SetChild(Component* value);
 	virtual Component* GetChild();
+	virtual void PrintCompositeStructure();
 
 private:
 	float value;

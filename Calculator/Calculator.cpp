@@ -10,9 +10,7 @@
 
 int main()
 {
-    char a;
     Calc* calc = new Calc;
     calc->Begin();
-    std::cout << "This is never going to be printed! \n";
 }
 

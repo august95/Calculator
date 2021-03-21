@@ -1,6 +1,5 @@
 #pragma once
-#include "Multiplication.h"
-#include "Addition.h"
+#include "Component.h"
 #include "Leaf.h"
 #include <iostream>
 
@@ -11,7 +10,6 @@ public:
 	Component* Get();
 	Parser();
 	~Parser();
-	//static Parser* GetParser();
 	void putback(Component* n);
 private:
 	Component* buffer;

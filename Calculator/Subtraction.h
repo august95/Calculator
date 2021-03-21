@@ -1,22 +1,20 @@
 #pragma once
 #include "Composite.h"
 
-/*
+
 class Subtraction : public Composite
 {
-private:
-	Composite* left;
-	Composite* right;
-	Ident ident;
-
 public:
 	Subtraction();
-	Ident Identify();
-	float Excecute();
-	void SetLeftChild(Composite* value);
-	Composite* GetLeftChild();
-	void SetRightChild(Composite* value);
-	Composite* GetRightChild();
-};
+	~Subtraction();
+	std::vector<Component*> children;
+	virtual Ident Identify();
+	virtual float Excecute();
+	virtual void SetChild(Component* value);
+	virtual Component* GetChild(int number);
+	virtual int NumberOfChildren();
+	virtual void PrintCompositeStructure();
+private:
+	Ident ident;
 
-*/
+};

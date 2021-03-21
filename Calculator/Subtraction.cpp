@@ -1,8 +1,14 @@
 #include "Subtraction.h"
-/*
+
 Subtraction::Subtraction()
 {
     ident = Subtract;
+}
+
+Subtraction::~Subtraction()
+{
+	for (int i = 0; i < children.size(); i++)
+		children[i]->~Component();
 }
 
 Ident Subtraction::Identify()
@@ -12,26 +18,35 @@ Ident Subtraction::Identify()
 
 float Subtraction::Excecute()
 {
-    return 0.0f;
+	std::cout << " - ";
+    if (children.empty()) return 0.0f;
+    float val = children[0]->Excecute();
+	for (int i = 1; i < children.size(); i++) 
+	{
+		val = val - children[i]->Excecute();
+	}
+	std::cout << ") ";
+	return val;
 }
 
-void Subtraction::SetLeftChild(Composite* value)
+void Subtraction::SetChild(Component* value)
 {
-    left = value;
+	children.push_back(value);
 }
 
-Composite* Subtraction::GetLeftChild()
+Component* Subtraction::GetChild(int number)
 {
-    return left;
+	if (children.size() < number) return nullptr;
+	return children[number];
 }
 
-void Subtraction::SetRightChild(Composite* value)
+int Subtraction::NumberOfChildren()
 {
-    right = value;
+	return children.size();
 }
 
-Composite* Subtraction::GetRightChild()
+void Subtraction::PrintCompositeStructure()
 {
-    return right;
+	std::cout << " - ";
+	Composite::PrintCompositeStructure();
 }
-*/

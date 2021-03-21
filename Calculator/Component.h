@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <iostream>
 
 
 enum Ident { Uninitialized , Add, Subtract, Multiply, LeafNode };
@@ -15,5 +16,6 @@ public:
 	virtual void SetChild(Component* value);
 	virtual Component* GetChild();
 	virtual int NumberOfChildren();
+	virtual void PrintCompositeStructure();
 };
 

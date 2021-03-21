@@ -18,7 +18,7 @@ Leaf::~Leaf()
 
 float Leaf::Excecute()
 {
-	std::cout << value <<"  leaf excecuted() \n";
+	std::cout << " " << value << " ";
 	return value;
 }
 
@@ -33,4 +33,9 @@ Component* Leaf::GetChild()
 	std::cout << "GetChild() on leaf \n";
 	return Component::GetChild();
 
+}
+
+void Leaf::PrintCompositeStructure()
+{
+	std::cout << " " << value << " ";
 }

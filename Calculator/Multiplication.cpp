@@ -19,10 +19,13 @@ Ident Multiplication::Identify()
 
 float Multiplication::Excecute()
 {
+    std::cout << " (* ";
     float val = 1;
-    for (int i = 0; i < children.size(); i++) {
+    for (int i = 0; i < children.size(); i++) 
+    {
         val = val * children[i]->Excecute();
     }
+    std::cout << ") ";
     return val;
 }
 
@@ -40,4 +43,10 @@ Component* Multiplication::GetChild(unsigned int number)
 int Multiplication::NumberOfChildren()
 {
     return children.size();
+}
+
+void Multiplication::PrintCompositeStructure()
+{
+	std::cout << " * ";
+	Composite::PrintCompositeStructure();
 }

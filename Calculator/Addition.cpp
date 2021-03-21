@@ -18,7 +18,14 @@ Ident Addition::Identify()
 
 float Addition::Excecute()
 {
-	return 0.0f;
+	std::cout << " (+ ";
+	float val = 0;
+	for (int i = 0; i < children.size(); i++)
+	{
+		val = val + children[i]->Excecute();
+	}
+	std::cout << ") ";
+	return val;
 }
 
 void Addition::SetChild(Component* value)
@@ -37,5 +44,10 @@ int Addition::NumberOfChildren()
 	return children.size();
 }
 
+void Addition::PrintCompositeStructure()
+{
+	std::cout << " + ";
+	Composite::PrintCompositeStructure();
+}
 
 

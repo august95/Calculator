@@ -13,6 +13,7 @@ public:
 	virtual void SetChild(Component* value);
 	virtual Component* GetChild();
 	virtual int NumberOfChildren();
+	virtual void PrintCompositeStructure();
 
 };
 
